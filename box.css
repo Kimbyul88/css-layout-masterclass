@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  height: 100vh;
+  /* gap: 10px; */
+  /* column-gap: 30px;
+    row-gap: 10px; */
+  justify-content: center;
+  /* align-items: stretch; */
+  align-items: center;
+  align-content: center; /*wrap일때만 적용, cross 축의 라인을 정리한다.*/
+  flex-direction: row;
+  /* flex-wrap: wrap; 단일라인이냐, 다중라인이냐 */
+  /* flex-flow: row wrap; flex direction, flex wrap 동시에 설정 */
+}
+.box {
+  /* width: 200px; */
+  height: 200px;
+  background-color: deeppink;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: blanchedalmond;
+  font-size: 30px;
+}
+.box:first-child {
+  flex-grow: 3;
+  flex-shrink: 0;
+}
+
+.box:nth-child(3) {
+  flex-shrink: 9;
+  flex-grow: 3;
+  order: 0; /**디폴트 order는 0이다!!!!!!*/
+  background-color: chartreuse;
+}
+
+.box:nth-child(2) {
+  order: 1;
+  background-color: aqua;
+  align-self: flex-end;
+  flex-grow: 2;
+}
