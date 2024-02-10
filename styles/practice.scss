@@ -1,0 +1,44 @@
+$sm: 480px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1200px;
+
+@mixin smallDevice {
+  @media screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin mediumDevice {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin largeDevice {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xLargeDevice {
+  @media screen and (min-width: $xl) {
+    @content;
+  }
+}
+
+body {
+  @include smallDevice {
+    background-color: blue;
+  }
+  @include mediumDevice {
+    background-color: red;
+  }
+  @include largeDevice {
+    background-color: aqua;
+  }
+  @include xLargeDevice {
+    background-color: yellow;
+  }
+  background-color: purple;
+}
