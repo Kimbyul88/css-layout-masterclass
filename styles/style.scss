@@ -50,6 +50,7 @@ ul {
 }
 
 .header-category {
+  white-space: nowrap;
   // font-size: 15px;
   font-weight: 300;
   color: white;
@@ -65,6 +66,7 @@ ul {
 }
 
 main {
+  // overflow: scroll;
   margin-top: 20px;
   color: white;
   height: 90%;
