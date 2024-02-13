@@ -1,272 +1,151 @@
 @import "./reset.scss";
+$greyColor: rgb(187, 187, 187);
 
 html {
   width: 100%;
   height: 100%;
-  background-color: rgb(125, 74, 169);
-  display: flex;
-  justify-content: center;
-  align-items: end;
 }
 
 body {
-  width: 60%;
-  height: 90%;
-  // font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  //   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: $greyColor;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window {
+  border-radius: 5px;
+  background-color: white;
+  width: 75%;
+  height: 80%;
   display: grid;
-  gap: 1.5px;
-  grid-template-columns: 4fr 4fr 3.5fr 3fr;
-  grid-template-rows: 5fr 4.5fr 4fr;
-  background-color: black;
-  box-sizing: border-box;
-  padding: 20px;
-  & > div {
-    border-radius: 10px;
+  grid-template-rows: 1fr 1fr 20fr;
+  box-shadow: -3px -3px 5px rgb(120, 120, 120);
+  .window__mac-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7px;
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(204, 204, 204);
+    box-sizing: border-box;
+    padding: 0 10px;
+    & > div {
+      border-radius: 50%;
+      background-color: rgb(135, 135, 135);
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .window__chrome-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: rgb(229, 229, 229);
+    .chrome-bar-input {
+      width: 92%;
+      height: 70%;
+      border-radius: 5px;
+      background-color: white;
+    }
   }
 }
 
-.course {
-  background-color: white;
-  grid-area: span 2 / span 2;
+.window__contents {
   display: grid;
-  grid-template-rows: 1fr 6fr 1.5fr;
-  box-sizing: border-box;
-  padding: 8px 20px;
-  .course__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .header-logo {
-      font-size: 40px;
-    }
-    .header-review {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      .review__rate {
-        font-size: 15px;
-      }
-      .review__best-reviews {
-        text-transform: uppercase;
-        font-size: 12px;
-        border-radius: 20px;
-        background-color: rgb(255, 200, 48);
-        font-weight: 800;
-        box-sizing: border-box;
-        padding: 3px 10px;
-      }
-    }
-  }
-  .course__main {
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 1fr 15fr 1fr;
+  #side-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 130px;
-    font-weight: 900;
-    letter-spacing: -8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
   }
-  .course__footer {
-    border-top: 1px solid black;
-    font-size: 25px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
+  .side-btn__north {
+    grid-column: span 3;
   }
-}
-
-.image1 {
-  background-size: cover;
-  background-image: url("https://source.unsplash.com/random");
-}
-
-.nav {
-  position: relative;
-  box-sizing: border-box;
-  padding: 20px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  ul {
+  .side-btn__west {
+    writing-mode: vertical-lr;
+    transform: scale(-1, -1);
+  }
+  .side-btn__east {
+    writing-mode: vertical-rl;
+  }
+  .side-btn__south {
+    grid-column: span 3;
+  }
+  .contents-main {
+    border: 2px solid black;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    font-weight: 200;
-    font-size: 12px;
-  }
-  .nav__yellow-btn {
-    position: absolute;
-    top: 16px;
-    right: 32px;
-    background-color: rgb(255, 200, 48);
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    border: 8px solid rgb(51, 45, 28);
-  }
-  .nav__outside-btn {
-    position: absolute;
-    top: 8px;
-    right: 24px;
-    background-color: black;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    border: 1.5px solid rgb(51, 45, 28);
-  }
-  .nav__hireus {
-    font-weight: 200;
-    font-size: 19px;
-  }
-}
-.collab {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  .collab__recent {
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 0 20px;
-    height: 50px;
-    display: flex;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: space-between;
-    background-color: rgb(255, 200, 48);
-    font-size: 10px;
-    font-weight: 400;
-    text-transform: uppercase;
-    .recent-dot {
-      background-color: black;
-      border-radius: 50%;
-      width: 8px;
-      height: 8px;
-    }
-  }
-  .collab__list {
-    transform: rotate(8deg);
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 0 20px;
-    height: 50px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    .collab__list-logo {
-      font-size: 35px;
-    }
-    .collab__list-name {
-      font-size: 25px;
-      letter-spacing: -2px;
-      &:last-child {
-        font-size: 13px;
-        transform: translate(2px, -3px);
-        font-weight: 600;
-      }
-    }
-  }
-}
-.qrcode {
-  background-color: white;
-  color: black;
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 800;
-}
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
-  transform: rotate(-30deg);
-  .logo-logo {
-    position: relative;
-  }
-  .logo-border {
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 2px dashed white;
-    opacity: 0.5;
-  }
-}
-.image2 {
-  box-sizing: border-box;
-  padding: 20px;
-  color: white;
-  background-size: cover;
-  background-image: url("https://source.unsplash.com/random");
-  & > div:first-child {
-    font-size: 13px;
-    font-weight: 200;
-  }
-  & > div:last-child {
-    margin-top: 3px;
-    font-weight: bold;
-  }
-}
-.users {
-  background-color: white;
-  grid-column: span 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 5px 30px;
-  .users__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .users__header-left {
+    padding: 0 20px 0 20px;
+    .main-category {
+      padding-top: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
       display: flex;
+      flex-direction: column;
       gap: 10px;
+      width: 100%;
       & > div {
-        width: 50px;
-        height: 70px;
-        border-radius: 40px;
-      }
-      .left__paging {
-        font-size: 10px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        border: 1.1px solid black;
-      }
-      .left__img {
-        background-image: url("https://source.unsplash.com/random");
-        background-size: cover;
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 5px;
+        border-bottom: 2px solid black;
       }
     }
-    .users__header-right {
+    .main-browse {
+      width: 100%;
+      height: 40px;
       display: flex;
-      gap: 15px;
       align-items: center;
-      .right__live-preview {
-        text-align: end;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      .right__icon {
+      justify-content: space-between;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: bold;
+      ul {
+        color: rgb(160, 160, 160);
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(255, 200, 48);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        gap: 5px;
+        li {
+          &:nth-child(3) {
+            color: black;
+          }
+        }
       }
     }
-  }
-  .users__footer {
-    font-size: 14px;
-    line-height: 20px;
+    .main-gallery {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      .gallery__post {
+        width: 100%;
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        .post-img {
+          width: 100%;
+          height: 80%;
+          background-image: url("https://source.unsplash.com/random");
+          background-size: cover;
+        }
+        .post-title {
+          padding: 0 20px 0 0;
+          font-size: 14px;
+          font-weight: 600;
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
   }
 }
